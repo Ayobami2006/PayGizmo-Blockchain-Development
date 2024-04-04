@@ -1,4 +1,4 @@
-# PayGizmoUserRegistration Smart Contract Project
+# UserRegistration and MakePayment Smart Contract Project
 
 This project contains the smart contract code for the UserRegistration contract, developed using Truffle and tested on the Ganache local Ethereum client.
 
