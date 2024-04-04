@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayGizmo User Registration</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        #userInfo {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            form {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>User Registration</h1>
+    <form id="registrationForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <br>
+
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" required>
+        <br>
+
+        <label for="jobTitle">Job Title:</label>
+        <input type="text" id="jobTitle" name="jobTitle" required>
+        <br>
+
+        <label for="monthlyPay">Monthly Pay (GBP/USD):</label>
+        <input type="number" id="monthlyPay" name="monthlyPay" required>
+        <br>
+
+        <label for="songTitle">Song Title (if applicable):</label>
+        <input type="text" id="songTitle" name="songTitle"><br>
+
+        <label for="royaltyEarnings">Royalty Earnings (GBP/USD):</label>
+        <input type="number" id="royaltyEarnings" name="royaltyEarnings"><br>
+
+        <button type="button" onclick="registerUser()">Register User</button>
+    </form>
+
+    <h2>User Information</h2>
+    <div id="userInfo"></div>
+
+    <script>
+        async function registerUser() {
+            const firstName = document.getElementById('firstName').value;
+            const surname = document.getElementById('surname').value;
+            const jobTitle = document.getElementById('jobTitle').value;
+            const monthlyPay = document.getElementById('monthlyPay').value;
+            const songTitle = document.getElementById('songTitle').value;
+            const royaltyEarnings = document.getElementById('royaltyEarnings').value;
+
+            // Call the smart contract function to register the user
+            // This is a simplified example and would need to be connected to a blockchain provider
+            // using a library like Web3.js or ethers.js
+
+            // Display user information
+            document.getElementById('userInfo').innerHTML = `
+                    <p><strong>First Name:</strong> ${firstName}</p>
+                    <p><strong>Surname:</strong> ${surname}</p>
+                    <p><strong>Job Title:</strong> ${jobTitle}</p>
+                    <p><strong>Monthly Pay:</strong> ${monthlyPay} GBP/USD</p>
+                    <p><strong>Song Title:</strong> ${songTitle}</p>
+                    <p><strong>Royalty Earnings:</strong> ${royaltyEarnings} GBP/USD</p>
+                `;
+        }
+    </script>
+</body>
+
+</html>

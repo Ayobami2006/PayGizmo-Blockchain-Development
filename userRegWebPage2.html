@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PayGizmo Blockchain Tasks</title>
+    <script src="https://cdn.ethers.io/ethers.js"></script>
+</head>
+
+<body>
+    <h1>PayGizmo Blockchain Tasks</h1>
+
+    <h2>User Registration</h2>
+    <form id="userRegistrationForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <br>
+
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" required>
+        <br>
+
+        <label for="jobTitle">Job Title:</label>
+        <input type="text" id="jobTitle" name="jobTitle" required>
+        <br>
+
+        <label for="monthlyPay">Monthly Pay (GBP/USD):</label>
+        <input type="number" id="monthlyPay" name="monthlyPay" required>
+        <br>
+
+        <label for="songTitle">Song Title:</label>
+        <input type="text" id="songTitle" name="songTitle">
+        <br>
+
+        <label for="royaltyEarnings">Royalty Earnings (GBP/USD):</label>
+        <input type="number" id="royaltyEarnings" name="royaltyEarnings">
+        <br>
+
+        <button type="submit">Register User</button>
+    </form>
+
+    <h2>Registered Users</h2>
+    <ul id="registeredUsersList">
+    </ul>
+
+    <h2>Make Payment</h2>
+    <form id="makePaymentForm">
+        <label for="assetAddress">Asset Address:</label>
+        <input type="text" id="assetAddress" name="assetAddress" required>
+        <br>
+
+        <label for="participantAddress">Participant Address:</label>
+        <input type="text" id="participantAddress" name="participantAddress" required>
+        <br>
+
+        <button type="submit">Make Payment</button>
+    </form>
+
+    <script>
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const contract = new ethers.Contract('USER_REGISTRY_ADDRESS', UserRegistry.abi, provider);
+        const paymentHandlerContract = new ethers.Contract('PAYMENT_HANDLER_ADDRESS', PaymentHandler.abi, provider);
+
+        // User registration form handler
+        const userRegistrationForm = document.getElementById('userRegistrationForm');
+        userRegistrationForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(userRegistrationForm);
+            // const user
+        })
+    </script>
+
+</html>
+</body>
